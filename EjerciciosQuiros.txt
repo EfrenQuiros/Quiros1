@@ -23,3 +23,8 @@ FROM `estadisticas`
 WHERE `temporada` = "04/05"
 ORDER BY `Asistencias_por_partido` DESC
 LIMIT 0,1);
+Codigo del jugador que hiciera menos revotes por partido
+SELECT `Rebotes_por_partido`,`jugador`
+FROM `estadisticas`
+WHERE `Rebotes_por_partido` < 0.1
+ORDER BY `Rebotes_por_partido` ASC;
