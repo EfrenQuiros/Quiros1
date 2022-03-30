@@ -28,3 +28,9 @@ SELECT `Rebotes_por_partido`,`jugador`
 FROM `estadisticas`
 WHERE `Rebotes_por_partido` < 0.1
 ORDER BY `Rebotes_por_partido` ASC;
+-------
+SELECT `Rebotes_por_partido`,`jugador` 
+FROM `estadisticas`
+WHERE `Rebotes_por_partido`= (SELECT `Rebotes_por_partido`
+FROM `estadisticas`
+ORDER BY `Rebotes_por_partido` ASC
