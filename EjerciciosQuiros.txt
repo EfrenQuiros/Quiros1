@@ -1,0 +1,25 @@
+
+Cartos gañados por cada empregado
+SELECT `idempleado`SUM(`total`)
+FROM `venta`
+GROUP BY `idempleado`;
+Cartos gañados cada día
+SELECT `fecha` SUM(`total`)
+FROM `venta`
+GROUP BY `fecha`;
+Cartos gastados por cliente
+SELECT `cliente` SUM(`total`)
+FROM `venta`
+GROUP BY `cliente`;
+Cartos gastados por cada publicacion
+SELECT `idpublicacion` SUM(`total`)
+FROM `venta`
+GROUP BY `idpublicacion`;
+Nombre del jugador que hizo mas asistencias por partido en la temporada 04/05
+SELECT *
+FROM `jugadores`
+WHERE`codigo`= (SELECT `jugador` 
+FROM `estadisticas`
+WHERE `temporada` = "04/05"
+ORDER BY `Asistencias_por_partido` DESC
+LIMIT 0,1);
